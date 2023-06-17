@@ -25,6 +25,8 @@ By default service is set to stop and is disabled
 
 Assumes port 8447 is fowarded to your server. You can change the port enrollment is available to by editing /etc/nginx/sites-enables/nginx-enrollment
 
+URL EXAMPLE: https://tak.example.com:8447
+
     #To enable enrollment:
     
     sudo systemctl | service start tak-enrollment
