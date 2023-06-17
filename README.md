@@ -19,7 +19,7 @@ Vist us at [tstak.us](https://tstak.us) for your TAK server needs!
 
     sudo bash enrollment-setup.sh
 
-## Managment
+## Management
 
 By default service is set to stop and is disabled
 
