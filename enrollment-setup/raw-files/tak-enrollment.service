@@ -1,0 +1,13 @@
+[Unit]
+Description=TAK Enrollment Service
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/opt/tak/enrollment
+ExecStart=/usr/local/bin/gunicorn wsgi:app --bind 127.0.0.1:8000 --workers 4 --threads 2 --timeout 120
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

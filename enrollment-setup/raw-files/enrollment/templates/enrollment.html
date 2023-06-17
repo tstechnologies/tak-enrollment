@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>SERVERNAME Enrollment</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='tstak.ico') }}">
+</head>
+<body>
+    <div class="container">
+        <a href="https://tstak.us">
+            <img src="{{ url_for('static', filename='tstak.png') }}" alt="Logo" class="logo">
+        </a>
+        <h1 class="header">Welcome to the SERVERNAME Enrollment Portal</h1>
+        <form method="POST" action="{{ url_for('enrollment') }}">
+            <span class="validation">* indicates required field</span><br><br>
+            <label for="agency_name">*Agency or Group Name:</label><br>
+            <input type="text" id="agency_name" name="agency_name"><br><br>
+            <label for="first_name">*First Name:</label><br>
+            <input type="text" id="first_name" name="first_name" required><br><br>
+            <label for="last_name">*Last Name:</label><br>
+            <input type="text" id="last_name" name="last_name" required><br><br>
+            <label for="email">*Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="phone">Phone #:</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+            <label for="username">*Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+            <span class="validation">Password must have at least 15 characters and must include 1 lowercase, 1 uppercase, 1 number, and 1 special character.</span><br><br>
+            <label for="password1">*Password:</label><br>
+            <input type="password" id="password1" name="password1" required><br><br>
+            <label for="password2">*Confirm Password:</label><br>
+            <input type="password" id="password2" name="password2" required><br><br>
+            <input type="submit" value="Create">
+            <!-- Separate error messages -->
+            <span class="error">{{ error_invalid_format }}</span><br>
+            <span class="error">{{ error_password_mismatch }}</span><br><br>
+            <span class="error">{{ error_required_fields }}</span><br><br>
+            <!-- Success message -->
+            <span class="success">{{ success_message }}</span><br><br>
+        </form>
+        <footer>
+            <p>
+                TAK Server Enrollment code provided by TSTAK. Visit us at
+                <a href="https://tstak.us">https://tstak.us</a>!
+            </p>
+            <p>
+                Copyright 2023 TS-Technologies LLC
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
